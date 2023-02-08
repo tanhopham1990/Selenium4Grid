@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -24,7 +25,7 @@ public class TestParallel {
 	
 	@Parameters({"browser"})
 	@Test
-	public void doSearch(String browser) throws MalformedURLException, InterruptedException {
+	public void doSearch(@Optional("firefox")String browser) throws MalformedURLException, InterruptedException {
 		
 		//java -jar selenium-server-4.1.0.jar node --detect-drivers true --publish-events tcp://192.168.1.16:4442 --subscribe-events tcp://192.168.1.24:4443
 		
